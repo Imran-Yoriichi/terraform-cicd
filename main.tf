@@ -8,14 +8,6 @@ terraform {
     }
   }
 
-  # Remote backend — state lives in Azure Storage
-  backend "azurerm" {
-    resource_group_name  = "rg-terraform-state"
-    storage_account_name = "stterraformstateski"
-    container_name       = "tfstate"
-    key                  = "dev/aks/terraform.tfstate"   # path inside container
-    use_azuread_auth     = true
-  }
 }
 
 provider "azurerm" {
